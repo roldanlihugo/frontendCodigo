@@ -1,0 +1,18 @@
+<div class="card m-2">
+  <img [src]="tarea.tarea_imagen" alt="..." />
+  <div class="card-body">
+    <h5 class="card-title">
+      {{ tarea.tarea_nombre }}
+    </h5>
+    <p class="card-text">Descripción: {{ tarea.tarea_descripcion }}</p>
+    <!-- routerLink="[ruta,parametro]" -->
+    <button class="btn btn-primary btn-block" [routerLink]="['detalle',tarea.tarea_id]">Ver Tareita</button>
+    <button class="btn btn-success btn-block" (click)="completar()">
+      Tarea Completada
+    </button>
+    <button class="btn btn-danger btn-block" (click)="borrar()">
+      Eliminar Tarea
+    </button>
+  </div>
+  <div class="card-footer">Tiempo:{{ tarea.tarea_hora }}</div>
+</div>
